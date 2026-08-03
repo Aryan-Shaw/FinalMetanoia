@@ -295,10 +295,10 @@ body { min-height: 100vh; position: relative; }
 
 .panel {
   position: fixed;
-  bottom: 92px;
-  right: 24px;
-  width: 620px;
-  height: 420px;
+  bottom: clamp(72px, 10vh, 92px);
+  right: clamp(12px, 3vw, 24px);
+  width: clamp(300px, 90vw, 620px);
+  height: clamp(380px, 70vh, 420px);
   background: rgba(16, 22, 43, 0.9);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -315,6 +315,15 @@ body { min-height: 100vh; position: relative; }
   pointer-events: none;
   will-change: transform, opacity;
   z-index: 999;
+}
+
+@media (max-width: 480px) {
+  .panel {
+    right: 12px;
+    left: 12px;
+    width: auto;
+    height: clamp(340px, 65vh, 420px);
+  }
 }
 .panel.open {
   opacity: 1;
