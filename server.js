@@ -28,7 +28,7 @@ try {
 
 app.use(cors());
 app.use(express.json());
-app.use(express.static(path.join(__dirname, "..", "frontend")));
+app.use(express.static(path.join(__dirname,  "frontend")));
 
 // Data files
 const QUESTIONS_PATH = path.join(__dirname, "questions.json");
